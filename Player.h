@@ -8,6 +8,7 @@ public:
   Player(string firstName, string lastName);
   ~Player();
   void print();
+  String getName();
 
 private:
   string getfirstName;
