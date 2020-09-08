@@ -10,5 +10,11 @@ Player::Player(string firstName, string lastName){
 
 
 void Player::print(){
-  cout<<endl<<"Employee ID: "<<getId<<"\nEmployee Name: "<<getfirstName<<" "<<getlastName<<"\nAge: "<<getAge<<"\n";
+  cout<<"Player Name: "<<getfirstName<<" "<<getlastName<<endl;
 }
+
+String Player::getName(){
+  string name = getfirstName + getlastName;
+  return(name);
+}
+
