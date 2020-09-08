@@ -1,3 +1,4 @@
+#include "Player.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -13,7 +14,7 @@ void Player::print(){
   cout<<"Player Name: "<<getfirstName<<" "<<getlastName<<endl;
 }
 
-String Player::getName(){
+string Player::getName(){
   string name = getfirstName + getlastName;
   return(name);
 }
