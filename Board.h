@@ -2,24 +2,46 @@
 #define BOARD_H
 #include "Ship.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Board
 {
         private:
-        //      int x; //rows
-        //      char y; //columns
-                char** boardArray;
+		string shotBoard[9][9];
+		string myBoard[9][9];
+		string m_rowNames = "A B C D E F G H I";
+		string m_columnNames = "1 2 3 4 5 6 7 8 9";
+		int m_rowIndex;
+		int m_columnIndex;
+		/**
+		* @pre none
+		*@param takes a location string from user
+		*@post converts userGuess to two array indices, updating rowIndex and columnIndex
+		*/
+		void guessConversion(std::string userGuess);
+		std::string blueTilde;
+		std::string redHit;
+		std::string whiteMiss;
+		std::string ship;
+		int numberOfShips;
+		Ship* m_ship = nullptr;
 
         public:
-                Board();
-                ~Board();
-                bool shipLocation(int x, char y);
-                void fire(int x, char y);
-        //      bool match();
-                void printBoard();
-
-
-};
-#endif
-
+		Board();
+		~Board();
+		Board(int shipnum);
+		void printShotBoard();
+		void printMyBoard();
+		void printIntermission(); // prints blank space to hide the board from the next player and asks that player to press Enter to continue
+		void setNumberofShips(int shipnum);
+		int getNumberofShips() const;
+		void setupBoard();
+		void updateShotBoard(std::string userGuess, bool wasHit);
+		bool updateMyBoard(std::string userGuess);
+		bool withinBoundary(std::string userGuess);
+		bool noHorizontalCollision(std::string userGuess, int shipLength); //check whether the horizontal placed ship will colide with another ship or not. Return true is ships will collide
+		bool noVerticalCollision(std::string userGuess, int shipLength); //same as above, but for vertical ships		
+		Ship* getShip() const; //get Ship object
+}
+#endif;
