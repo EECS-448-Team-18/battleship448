@@ -5,14 +5,12 @@ using namespace std;
 
 class Player{
 public:
-  Player(string firstName, string lastName);
+  Player(int numOfBoats);
   ~Player();
-  void print();
-  string getName();
+  int getNumOfBoats();
 
 private:
-  string getfirstName;
-  string getlastName;
+  int _numOfBoats;
 };
 
 #endif
