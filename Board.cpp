@@ -34,6 +34,11 @@ void Board::printShotBoard()
 
 void Board::setNumberofShips(int shipNum)
 {
-	
+	numberOfShips = shipNum;	
+}
+
+void Board::getNumberofShips() const
+{
+	return(numberOfShips);
 }
 
