@@ -3,7 +3,7 @@
 using namespace std;
 
 class Ship {
-    private: 
+    private:
         int size;
         char orientation;
 
@@ -15,8 +15,9 @@ class Ship {
 
         int *row;
         int *col;
-        
+
     public:
+        //abx
         //Constructor
         Ship(int size, char orientation, int startRow, int endRow, char startCol, char endCol, int *row, char *col);
         ~Ship();
@@ -31,5 +32,5 @@ class Ship {
 
         //Check the ship is sunk
         bool isSunk(int size);
-        
+
 }
