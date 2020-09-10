@@ -1,36 +1,62 @@
-#include <iostream>
+#include "ship.cpp"
 
 using namespace std;
 
-class Ship {
-    private:
-        int size;
-        char orientation;
+Ship::Ship(int size, char orientation, int startRow, int endRow, char startCol, char endCol, int *row, char *col) {
+    size = this->size;
+    orientation = this->orientation;
+    startRow = this->startRow;
+    endRow = this->endRow;
+    startCol = this->startCol;
+    endCol = this->endCol;
 
-        int startRow;
-        int endRow;
+    row = new int[size];
+    col = new char[size];
+    if(orientation == 'horizontal') {
+        for(int i=0; i<size; i++){
+            row[i]=startRow;
+            for(char j='startCol'; j<'endCol'; j++){
+                col[i]=j;
+            }
+        }
+        
+    }
+    else if (orientation == 'vertical'){
+        for(int i=0; i<size; i++){
+            row[i]=startRow+i;
+           for(char j='startCol'; j<'endCol'; j++){
+                col[i]=startCol;
+            } 
+        }
+    }
+    else {
+        return ;
+    }
+}
 
-        char startCol;
-        char endCol;
+Ship::~Ship() {
+    delete[] row;
+    delete[] col;
+}
 
-        int *row;
-        int *col;
+int Ship::getSize() {
+    return size;
+}
 
-    public:
-        //Comment Linh
-        //Constructor
-        Ship(int size, char orientation, int startRow, int endRow, char startCol, char endCol, int *row, char *col);
-        ~Ship();
-        //return size of a ship
-        int getSize();
+char Ship::getOrientation() {
+    return orientation;
+}
 
-        //return orientation either 'horizontal' and 'vertical'
-        char getOrientation();
+void Ship::fireSpace(int rowPosition, char colPosition) {  
+    for(int i=0; i<size; i++) {
+        if(rowPosition==row[i] && colPosition==col[i]) {
+            row[i]=0;
+            col[i]='O';
+            size--;
+        }
+    }
+}
 
-        //if player hit the ship, change the row to 0 and col to 'O'
-        void fireSpace(int rowPosition, char colPosition);
-
-        //Check the ship is sunk
-        bool isSunk(int size);
-
+bool isSunk(int size) {
+    return size==0;
 }
