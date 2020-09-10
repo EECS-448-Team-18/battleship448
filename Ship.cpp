@@ -17,7 +17,7 @@ class Ship {
         int *col;
 
     public:
-        //abx
+        //Comment Linh
         //Constructor
         Ship(int size, char orientation, int startRow, int endRow, char startCol, char endCol, int *row, char *col);
         ~Ship();
