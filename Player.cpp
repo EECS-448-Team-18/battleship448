@@ -4,18 +4,12 @@
 using namespace std;
 
 
-Player::Player(string firstName, string lastName){
-  getfirstName = firstName;
-  getlastName = lastName;
+Player::Player(int numOfBoats){
+  _numOfBoats = numOfBoats;
 }
 
 
-void Player::print(){
-  cout<<"Player Name: "<<getfirstName<<" "<<getlastName<<endl;
-}
-
-string Player::getName(){
-  string name = getfirstName + getlastName;
-  return(name);
+int Player::getNumOfBoats(){
+  return _numOfBoats;
 }
 
