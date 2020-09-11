@@ -8,7 +8,11 @@ Board::Board()
 
 Board::~Board()
 {
-
+	for(int i = 1; i < 9; i++)
+	{
+		delete [] boardArray[i];
+	}
+	delete boardArray;
 }
 
 void Board::printMyBoard()
