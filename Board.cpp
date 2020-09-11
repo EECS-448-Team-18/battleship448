@@ -130,3 +130,9 @@ bool Board::noVerticalCollision(std::string userGuess, int shipLength)
         }
         return true;
 }
+void Board::printIntermission();
+{
+        cout << "Press Enter to Continue....";
+        cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+        cout << string(100, '\n');
+}
