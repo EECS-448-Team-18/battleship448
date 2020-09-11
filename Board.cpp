@@ -95,3 +95,14 @@ bool Board::updateMyBoard(std::string userGuess)
                 }
         }
         return false;
+
+}
+bool Board::withinBoundary(std::string userGuess)
+{
+        guessConversion(userGuess);
+        if (m_rowIndex < 10 && m_rowIndex > 0 && m_colIndex < 10 && m_colIndex > 0)
+        {
+                return true;
+        }
+        return false;
+}
