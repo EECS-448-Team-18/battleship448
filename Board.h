@@ -30,7 +30,6 @@ class Board
         public:
         	Board();
         	~Board();
-		Ship shipObject;
 		Board(int shipNum);
 		void printShotBoard();
 		void printMyBoard();
