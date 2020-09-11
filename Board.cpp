@@ -70,4 +70,17 @@ void Board::setupBoard()
                 }
         
 }
+void Board::updateShotBoard(std::string userGuess, bool wasHit)
+{
+	guessConversion(userGuess);
+        if(wasHit)
+        {
+                shotBoard[m_rowIndex][m_colIndex]="redHit";
+        }
+        else
+        {
+                shotBoard[m_rowIndex][m_colIndex]="whiteMiss";
+        }
+        
 
+}
