@@ -106,3 +106,27 @@ bool Board::withinBoundary(std::string userGuess)
         }
         return false;
 }
+bool Board::noHorizontalCollision(std::string userGuess, int shipLength)
+{
+        guessConversion(userGuess);
+        for(int i = m_rowIndex; i < m_rowIndex + shipLength; i++)
+        {
+                if(myBoard[m_rowIndex][i] == "ship")
+                {
+                        return false;
+                }
+        }
+        return true;
+}
+bool Board::noVerticalCollision(std::string userGuess, int shipLength)
+{
+        guessConversion(userGuess);
+        for(int i = m_colIndex; i < m_colIndex + shipLength; i++)
+        {
+                if(myBoard[i][m_colIndex] == "ship")
+                {
+                        return false;
+                }
+        }
+        return true;
+}
