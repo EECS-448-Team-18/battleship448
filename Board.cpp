@@ -8,11 +8,11 @@ Board::Board()
 
 Board::~Board()
 {
-	for(int i = 1; i < 9; i++)
+	for(int i = 0; i < 9; i++)
 	{
-		delete [] boardArray[i];
+		delete boardArray[i];
 	}
-	delete boardArray;
+	delete[] boardArray;
 }
 
 void Board::printMyBoard()
@@ -20,11 +20,15 @@ void Board::printMyBoard()
        // cout << " A B C D E F G H I" <<endl;
 //      if(x >= 1 && x <= 9)
 //        {
-                for(int i = 1; i < 9; i++)
+                for(int i = 0; i < 9; i++)
                 {
-                        for(int j = 1; j < 9; j++)
+                        for(int j = 0; j < 9; j++)
                         {
-                                cout << boardArray[i][j] << "\n";
+				if(i == 0 && j == 0)
+				{
+					cout << "\n";
+				}
+                                cout << myBoard[i][j] << "\n";
                         }
                 }
 		cout << "\n";
@@ -33,7 +37,17 @@ void Board::printMyBoard()
 
 void Board::printShotBoard()
 {
-
+	for(int i = 0; i < 9; i++)
+	{
+		for(int j = 0; j < 9; j++)
+		{
+			if(i == 0 && j == 0)
+			{
+				cout << "\n";
+			}
+			cout << shotBoard[i][j] << "\n";
+		}
+	}
 }
 
 void Board::setNumberofShips(int shipNum)
