@@ -84,3 +84,14 @@ void Board::updateShotBoard(std::string userGuess, bool wasHit)
         
 
 }
+bool Board::updateMyBoard(std::string userGuess)
+{
+        if(withinBoundary(userGuess))
+        {       
+                if (myBoard)
+                {
+                        myBoard[m_rowIndex][m_colIndex] = "redHit";
+                        return True;
+                }
+        }
+        return false;
