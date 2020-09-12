@@ -1,5 +1,6 @@
 //Board.cpp
 #include "Board.h"
+#include <string>
 
 Board::Board()
 {
