@@ -6,19 +6,19 @@ using namespace std;
 
 class Player{
 public:
-  Player(int numOfBoats);
+  Player(int shipsNum);
   ~Player();
   int getNumOfBoats();
-  void setGuess();
-  string getGuess();
-  *Board getBoard();
-  bool gettingShot(string location);
-  void shooting(string location, bool hit);
+  void setRecentGuess(std::string guess);
+  std::string getGuess() const;
+  Board* getBoard() const;
+  bool gettingShot(std::string guess);
+  void shooting(string guess, bool hit);
 
 private:
-  int _numOfBoats;
-  string _guessShot;
-  Board *boardPtr;
+  int numOfShips;
+  std::string recentguess;
+  Board* m_board = nullptr;
 };
 
 #endif
