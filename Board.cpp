@@ -1,11 +1,9 @@
 //Board.cpp
 #include "Board.h"
-<<<<<<< HEAD
 #include <string>
 =======
 #include <sstream>
 #include <limits>
->>>>>>> fe07eb00a530c5811ef6d4cae3568c603c7baacc
 
 Board::Board(int shipnum)
 {
