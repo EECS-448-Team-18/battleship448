@@ -8,10 +8,10 @@ using namespace std;
 class Board
 {
         private:
-        	std::string shotBoard[9][9];
-		std::string myBoard[9][9];
-		std::string m_rowNames = "A B C D E F G H I";
-		std::string m_columnNames = "1 2 3 4 5 6 7 8 9";
+        	string shotBoard[9][9];
+		string myBoard[9][9];
+		string m_rowNames = "A B C D E F G H I";
+		string m_columnNames = "1 2 3 4 5 6 7 8 9";
 		int m_rowIndex;
 		int m_columnIndex;
 		/**
@@ -20,10 +20,10 @@ class Board
 		*	@post converts userGuess to two array indices, updating rowIndex and columnIndex
 		*/
 		void guessConversion(std::string userGuess);
-		std::string blueTilde;
-		std::string redHit;
-		std::string whiteMiss;
-		std::string ship;
+		string blueTilde;
+		string redHit;
+		string whiteMiss;
+		string ship;
 		int numberOfShips;
 		Ship* m_ship = nullptr;
 
