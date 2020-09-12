@@ -361,3 +361,28 @@ void Board::printIntermission();
 	std::cout << "Press Enter when ready! ";
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');	//for friendly "smack-talking". inputs will be ignored.
 }
+
+void Board::guessConversion(string userGuess)
+{
+	if(userGuess.length() != 2)
+	{
+		return;
+	}
+	else
+	{
+		for(unsigned int i = 0; i <m_rowNames.length(); i++)
+		{
+			if(userGuess.at(0) == m_rowsNames.at(i) || userGuess.at(0) == (tolower(m_rowNames.at(i))))
+			{
+				m_columnIndex = i;
+				break;
+			}
+			else
+			{
+				m_columnIndex = 10;
+			}
+		}
+	}
+	int temp = userGuess.at(1) - '0';
+	m_rowIndex = temp - 1;
+}
