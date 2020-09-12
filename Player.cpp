@@ -4,32 +4,46 @@
 using namespace std;
 
 
-Player::Player(int numOfBoats){
-  _numOfBoats = numOfBoats;
-  boardPtr = new Board();
+Player::Player(int shipNums){
+ m_board = new Board(shipNums);
+	numOfShips = shipNums;
 }
 
 
-int Player::getNumOfBoats(){
-  return(_numOfBoats);
+Player::~Player()
+{
+  delete m_board;
 }
 
-void setGuess(string location) {
-    _guessShot = location;
+void Player::setRecentGuess(std::string userGuess)
+{
+	recentguess = userGuess;
 }
 
-string getGuess() {
-    return(_guessShot);
+std::string Player::getRecentGuess() const
+{
+	return recentguess;
 }
 
-*Board getBoard() const {
-    return(*boardPtr);
+Board* Player::getBoard() const
+{
+	return m_board;
 }
 
-bool gettingShot(string location) {
-    
+bool Player::gettingShot(std::string userGuess)
+{
+	if(m_board->withinBoundary(userGuess)) // check userGuess within boundary or not
+	{
+		return (m_board->updateMyBoard(userGuess)); //updated player's board after get shot
+	}
+	else
+	{
+		throw(std::runtime_error("Out of Boundary! Try again.\n"));
+	}
+
 }
 
-void shooting(string location, bool hit) {
-
+void Player::shooting(std::string userGuess, bool hit)
+{
+	m_board->updateShotBoard(userGuess, hit); //update the shot board after player shooting
 }
