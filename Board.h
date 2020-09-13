@@ -1,6 +1,6 @@
 /* -----------------------------------------------------------------------------
 
-@author Xiaoyi Lu, Evelyn Thomas, @file Board.h, @date 09/12/20, @brief declares Board methods
+@author Abhigyan Saxena, Xiaoyi Lu, Evelyn Thomas, @file Board.h, @date 09/12/20, @brief declares Board methods
 
  ---------------------------------------------------------------------------- */
 #ifndef BOARD_H
