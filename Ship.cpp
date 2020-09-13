@@ -1,62 +1,60 @@
-#include "ship.cpp"
+#include "Ship.h"
 
 using namespace std;
 
-Ship::Ship(int size, char orientation, int startRow, int endRow, char startCol, char endCol, int *row, char *col) {
-    size = this->size;
-    orientation = this->orientation;
-    startRow = this->startRow;
-    endRow = this->endRow;
-    startCol = this->startCol;
-    endCol = this->endCol;
-
-    row = new int[size];
-    col = new char[size];
-    if(orientation == 'horizontal') {
-        for(int i=0; i<size; i++){
-            row[i]=startRow;
-            for(char j='startCol'; j<'endCol'; j++){
-                col[i]=j;
-            }
-        }
-        
-    }
-    else if (orientation == 'vertical'){
-        for(int i=0; i<size; i++){
-            row[i]=startRow+i;
-           for(char j='startCol'; j<'endCol'; j++){
-                col[i]=startCol;
-            } 
-        }
-    }
-    else {
-        return ;
-    }
+Ship::Ship()
+{
+  m_ship = nullptr;   
+  m_length = 0;      
+  m_damage = 0;       
 }
 
-Ship::~Ship() {
-    delete[] row;
-    delete[] col;
+Ship::~Ship(){
+    delete[] m_ship;
 }
 
-int Ship::getSize() {
-    return size;
+void Ship::createShip(int length) 
+{
+    m_length = length;
+    m_ship = new string[length];
 }
 
-char Ship::getOrientation() {
-    return orientation;
+void Ship::setCoordinate(string coordinate, int index) {
+    m_ship[index]=coordinate;
 }
 
-void Ship::fireSpace(int rowPosition, char colPosition) {  
-    for(int i=0; i<size; i++) {
-        if(rowPosition==row[i] && colPosition==col[i]) {
-            row[i]=0;
-            col[i]='O';
-            size--;
-        }
-    }
+string Ship::getCoordinate(int index) const{
+    return m_ship[index];
 }
 
-bool isSunk(int size) {
-    return size==0;
+void Ship::setLength(int length){
+    m_length = length;
+}
+
+int Ship::getLength() const{
+    return(m_length);
+}
+
+bool Ship::isSunk()
+{
+     if(m_damage == m_length)    //damage equals the length
+  {
+    return true;    //the ship is sunk
+  }
+  else    //damage does not equal the length
+  {
+    return false;   //the ship is not sunk
+  }
+}
+
+void Ship::addDamage(){
+    m_damage++;
+}
+
+int Ship::getDamage() const{
+    return m_damage;
+}
+
+void Ship::setDamage(int newDamage){
+    m_damage = newDamage;
 }
