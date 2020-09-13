@@ -1,3 +1,8 @@
+/* -----------------------------------------------------------------------------
+
+@author Abhigyan Saxena, Xiaoyi Lu, Evelyn Thomas, @file Board.cpp, @date 09/12/20, @brief Board functions implemented
+
+ ---------------------------------------------------------------------------- */
 #include "Board.h"
 #include <sstream>
 #include <limits>
