@@ -1,62 +1,45 @@
-#include "ship.cpp"
+#include "Ship.h"
 
 using namespace std;
 
-Ship::Ship(int size, char orientation, int startRow, int endRow, char startCol, char endCol, int *row, char *col) {
-    size = this->size;
-    orientation = this->orientation;
-    startRow = this->startRow;
-    endRow = this->endRow;
-    startCol = this->startCol;
-    endCol = this->endCol;
+Ship::Ship(){}
 
-    row = new int[size];
-    col = new char[size];
-    if(orientation == 'horizontal') {
-        for(int i=0; i<size; i++){
-            row[i]=startRow;
-            for(char j='startCol'; j<'endCol'; j++){
-                col[i]=j;
-            }
-        }
-        
-    }
-    else if (orientation == 'vertical'){
-        for(int i=0; i<size; i++){
-            row[i]=startRow+i;
-           for(char j='startCol'; j<'endCol'; j++){
-                col[i]=startCol;
-            } 
-        }
-    }
-    else {
-        return ;
-    }
+Ship::~Ship(){
+    delete m_ship;
 }
 
-Ship::~Ship() {
-    delete[] row;
-    delete[] col;
+void Ship::createShip(int length) {
+    m_ship = new string[length];
 }
 
-int Ship::getSize() {
-    return size;
+void Ship::setCoordinate(string coordinate, int index) {
+    m_ship[index]=coordinate;
 }
 
-char Ship::getOrientation() {
-    return orientation;
+string Ship::getCoordinate(int index) const{
+    return m_ship[index];
 }
 
-void Ship::fireSpace(int rowPosition, char colPosition) {  
-    for(int i=0; i<size; i++) {
-        if(rowPosition==row[i] && colPosition==col[i]) {
-            row[i]=0;
-            col[i]='O';
-            size--;
-        }
-    }
+void Ship::setLength(int length){
+    this->length = length;
 }
 
-bool isSunk(int size) {
-    return size==0;
+int Ship::getLength() const{
+    return(length);
+}
+
+bool Ship::isSunk(){
+    return (length == 0);
+}
+
+void Ship::addDamage(){
+    damage++;
+}
+
+int Ship::getDamage() const{
+    return damage;
+}
+
+void Ship::setDamage(int newDamage){
+    damage = newDamage;
 }
