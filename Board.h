@@ -1,6 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 #include "Ship.h"
+#include "algorithm"
 #include <iostream>
 #include <string>
 #include <limits>
@@ -11,15 +12,10 @@ class Board
         private:
         	string shotBoard[9][9];
 		string myBoard[9][9];
-		string m_rowNames = "A B C D E F G H I";
-		string m_columnNames = "1 2 3 4 5 6 7 8 9";
+		string m_rowNames = "ABCDEFGHI";
+		string m_columnNames = "123456789";
 		int m_rowIndex;
 		int m_columnIndex;
-		/**
-		* @pre none
-		*	@param takes a location string from user
-		*	@post converts userGuess to two array indices, updating rowIndex and columnIndex
-		*/
 		void guessConversion(std::string userGuess);
 		string blueTilde;
 		string redHit;
