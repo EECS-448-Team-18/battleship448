@@ -10,7 +10,7 @@ public:
   ~Player();
   int getNumOfBoats();
   void setRecentGuess(std::string guess);
-  std::string getGuess() const;
+  std::string getRecentGuess() const;
   Board* getBoard() const;
   bool gettingShot(std::string guess);
   void shooting(string guess, bool hit);
@@ -22,3 +22,4 @@ private:
 };
 
 #endif
+
