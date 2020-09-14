@@ -1,3 +1,9 @@
+/**------------------------------------------------------------------
+Filename: Player.cpp, Author: Achyut Paudel, Date: 9/06/2020
+Desc: Includes implementation for Player.h file/functions
+------------------------------------------------------------------
+*/
+
 #include "Player.h"
 #include <iostream>
 #include <string>
