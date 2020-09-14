@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> README - Documentation </title>
+    <style type ="text/css">
+        p {
+            font-size: 16px;
+        }
+        #madeby { color: blue; float: right;}
+        h2 { font-size: 35px; text-align: center;}
+    </style>
+</head>
+
+<body>
+    <h2>EECS 448 Project 1: Battleship</h2>
+    <p> The <a href="https://github.com/EECS-448-Team-18/battleship448">Battleship</a> is a strategy type guessing game for two players</p>
+    <p>
+        Authors: Abhigyan Saxena <br>
+        Linh Nguyen <br>
+        Achyut Paudel <br>
+        Evelyn Thomas <br>
+        Xiaoyi Lu <br> <br>
+        Last changed on: Sep 13, 2020. <br>
+    </p>
+
+    <p>
+        Executive() <br>
+        Author: Abhigyan Saxena <br>
+        void shoot(std::string location) <br>
+            @pre: Function to shoot at given location.
+            @post:
+            @param: std::string location <br>
+        void game() <br>
+            @pre: 
+            @post:
+            @param: <br>
+        int boatCheck() <br>
+            @pre: Function including all the game functionality.
+            @post:
+            @param: <br>
+    </p>
+    <p>
+        Player() <br>
+        Author: Achyut Paudel <br>
+        int getNumOfBoats() <br>
+            @pre player board is populated with boats
+            @post returns number of boats that the player still has
+            @param none <br>
+        void setRecentGuess(std::string guess) <br>
+            @pre none
+            @post recent guess is updated
+            @param location of guess <br>
+
+        std::string getRecentGuess() const <br>
+            @pre there exists a recent guess
+            @post recent guess is returned
+            @param none <br>
+
+        Board* getBoard() const <br>
+            @pre none
+            @post Players board is returned
+            @param none <br>
+
+        bool gettingShot(std::string guess) <br>
+            @pre none
+            @post returns if the location that was guessed is within the boundary of the board
+            @param location of guess <br>
+
+        void shooting(string guess, bool hit) <br>
+            @pre location of guess must be valid
+            @post updates this players board with location of guess marked
+            @param location of guess and boolean whose value indicated whether the location is valid <br>
+    </p>
+
+    <p>
+        Board.h <br>
+        Author: Abhigyan Saxena, Xiaoyi Lu, Evelyn Thomas <br>
+        Board(int shipNum) <br>
+            * @pre None
+       		* @post constructor
+       		* @param shipNum
+       		* @throw None <br>
+
+        void printShotBoard() <br>
+            * @pre None
+       		* @post prints rival's board
+       		* @param None
+       		* @throw None <br>
+
+        void printMyBoard() <br>
+            * @pre None
+            * @post prints player's board
+            * @param None
+            * @throw None <br>
+
+        void printIntermission() <br>
+            * @pre None
+            * @post prints blank space to hide the board from the other player
+            * @param None
+            * @throw None <br>
+
+        void setNumberofShips(int shipnum) <br>
+            * @pre None
+            * @post sets the number of ships
+            * @param an integer called shipnum
+            * @throw None <br>
+
+        int getNumberofShips() const <br>
+            * @pre None
+            * @post gets the number of ships
+            * @param None
+            * @throw None <br>
+
+        void setupBoard() <br>
+            * @pre None
+            * @post sets the board up for the players
+            * @param None
+            * @throw None <br>
+
+        void updateShotBoard(std::string userGuess, bool wasHit) <br>
+            * @pre None
+            * @post updates the shot board based on whether a location with a ship was hit or not
+            * @param userGuess, wasHit
+            * @throw None <br>
+
+        bool updateMyBoard(std::string userGuess) <br>
+            * @pre None
+            * @post Updates the player's board
+            * @param userGuess
+            * @throw If the user guesses a location that was shot before, a runtime error is thrown <br>
+
+        bool withinBoundary(std::string userGuess) <br>
+            * @pre None
+            * @post checks if the guess is within bounds or not. Based on the check, it returns true or false.
+            * @param userGuess
+            * @throw None <br>
+
+        bool noHorizontalCollision(std::string userGuess, int shipLength) <br>
+            * @pre None
+            * @post checks whether the horizontally placed ship will collide with another ship. Based on this, it returns true or false.
+            * @param userGuess, shipLength
+            * @throw None <br>
+
+        bool noVerticalCollision(std::string userGuess, int shipLength) <br>
+            * @pre None
+            * @post checks whether the vertically placed ship will collide with another ship. Based on this, it returns true or false
+            * @param userGuess, shipLength
+            * @throw None <br>
+
+        Ship* getShip() const <br>
+            * @pre None
+            * @post gets ship object
+            * @param None
+            * @throw None <br>
+    </p>
+
+    <p>
+        Ship.h <br>
+        Author: Linh Nguyen <br>
+
+        void createShip(int length)<br>
+            *pre: none
+            *post: create a ship for desired length
+            *return: none <br>
+
+        void setCoordinate(string coordinate, int index <br>
+            *pre: none
+            *post: set coordinate for ship
+            *return: none <br>
+
+        string getCoordinate(int index) const <br>
+            *pre: none
+            *post: get the coordinate for ship
+            *return: the coordinates for ship <br>
+
+        void setLength(int length) <br>
+            *pre: none
+            *post: Set the ship length
+            *return: none <br>
+
+        int getLength() const <br>
+            *pre: none
+            *post: Get the ship length
+            *return: length of the ship<br>
+
+        bool isSunk() <br>
+            *pre: none
+            *post: boolean check the status of the ship
+            *return: true of the ship sunk, otherwise return false <br>
+
+        void addDamage() <br>
+            *pre: none
+            *post: hit the enemy ship and give damage
+            *return: none <br>
+
+        int getDamage() const <br>
+            *pre: none
+            *post: get the damage to the ship
+            *return: the damage to the ship <br>
+
+        void setDamage(int newDamage) <br>
+            *pre: none
+            *post: set the damage to the ship
+            *return: none <br> <br>
+    </p>
+    <p id="madeBy">Documentation made by Linh Nguyen</p>
+</body>
+</html>
