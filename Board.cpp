@@ -136,8 +136,9 @@ void Board::updateShotBoard(std::string userGuess, bool wasHit)
 }
 
 
-{
+
 void Board::guessConversion(std::string userGuess)
+{
 	if(userGuess.length() != 2)	//if it isn't a coordinate like "A2, B7" etc. we return so user can try agane
 	{
 		return;
