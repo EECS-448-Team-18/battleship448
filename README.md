@@ -1,4 +1,5 @@
 BATTESHIP 
+---------
 PROJECT 1 - EECS 448 at the University of Kansas (FALL 2020)
 
 CONTENTS OF THIS FILE
@@ -12,7 +13,9 @@ CONTENTS OF THIS FILE
 
 INTRODUCTION:
 ------------
-    This battleship game is a strategy type guessing game for two players. Both players secretly place 1 to 5 ships on a 9x9 grid and take turns to fire the opponent's grid that they wish to do. The first player to sink all the ships of the others wins.
+    This battleship game is a strategy type guessing game for two players. 
+    Both players secretly place 1 to 5 ships on a 9x9 grid and take turns to fire the opponent's grid that they wish to do. 
+    The first player to sink all the ships of the others wins.
 
 REQUIREMENTS:
 ------------
