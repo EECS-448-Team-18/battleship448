@@ -1,3 +1,9 @@
+/**------------------------------------------------------------------
+Filename: Player.cpp, Author: Achyut Paudel, Date: 9/06/2020
+Desc: Includes implementation for Player.h file/functions
+------------------------------------------------------------------
+*/
+
 #include "Player.h"
 #include <iostream>
 #include <string>
@@ -5,7 +11,7 @@ using namespace std;
 
 
 Player::Player(int shipNums){
- m_board = new Board(shipNums);
+ m_board = new Board(shipNums); //initialize board for player
 	numOfShips = shipNums;
 }
 
@@ -17,17 +23,17 @@ Player::~Player()
 
 void Player::setRecentGuess(std::string userGuess)
 {
-	recentguess = userGuess;
+	recentguess = userGuess; //update most recent guess
 }
 
 std::string Player::getRecentGuess() const
 {
-	return recentguess;
+	return recentguess; //return most recent guess
 }
 
 Board* Player::getBoard() const
 {
-	return m_board;
+	return m_board; //return board object of player
 }
 
 bool Player::gettingShot(std::string userGuess)

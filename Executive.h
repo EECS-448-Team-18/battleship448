@@ -1,3 +1,7 @@
+/*------------------------------------------------------------------
+Filename: Executive.h, Author: Abhigyan Saxena, Date: 9/06/2020
+Desc: Includes Executive.h functions for battleship game.
+------------------------------------------------------------------*/
 #ifndef EXECUTIVE_H
 #define EXECUTIVE_H
 
@@ -10,10 +14,35 @@
 class Executive
 {
 public:
+	/*
+	@pre: Executive class constructor
+	@post:
+	@param:
+	*/
 	Executive();
+	/*
+	@pre: Executive class destructor
+	@post:
+	@param:
+	*/
 	~Executive();
+	/*
+	@pre: Function to shoot at given location.
+	@post:
+	@param: std::string location
+	*/
 	void shoot(std::string location);
+	/*
+	@pre: 
+	@post:
+	@param:
+	*/
 	void game();
+	/*
+	@pre: Function including all the game functionality.
+	@post:
+	@param:
+	*/
 	int boatCheck();
 
 private:

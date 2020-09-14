@@ -11,15 +11,15 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
 class Ship {
     private:
-        string* m_ship;
-        string coordinate;
-        int length;
-        int damage;
+        std::string* m_ship;
+        int m_length;
+        int m_damage;
 
     public:
         //Default Constructor
