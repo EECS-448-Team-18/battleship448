@@ -1,3 +1,11 @@
+/*
+ * File Name: Ship.h
+ * Author: Linh Nguyen
+ * Project 1 EECS 448
+ * Brief: Export the template class Ship
+ * Date: Sep 13, 2020
+ * 
+*/
 #ifndef SHIP_H
 #define SHIP_H
 
@@ -19,24 +27,60 @@ class Ship {
         //Destructor
         ~Ship();
 
-        //Create a ship for desired length
+        /*
+         *pre: none
+         *post: create a ship for desired length
+         *return: none
+        */
         void createShip(int length);
-        //Set coordinate for ship
+        /*
+         *pre: none
+         *post: set coordinate for ship
+         *return: none
+        */
         void setCoordinate(string coordinate, int index);
-        //Get the coordinate for ship, return the coordinates for ship
+        /*
+         *pre: none
+         *post: get the coordinate for ship
+         *return: the coordinates for ship
+        */
         string getCoordinate(int index) const;
-        // Set the ship length
+        /*
+         *pre: none
+         *post: Set the ship length
+         *return: none
+        */
         void setLength(int length);
-        // Get the ship length
+        /*
+         *pre: none
+         *post: Get the ship length
+         *return: length of the ship
+        */
         int getLength() const;
 
-        //true if the ship sunk
+        /*
+         *pre: none
+         *post: boolean check the status of the ship
+         *return: true of the ship sunk, otherwise return false
+        */
         bool isSunk();
-        //hit the enemy ship and give damage
+        /*
+         *pre: none
+         *post: hit the enemy ship and give damage
+         *return: none
+        */
         void addDamage();
-        //get the damage to the ship
+        /*
+         *pre: none
+         *post: get the damage to the ship
+         *return: the damage to the ship
+        */
         int getDamage() const;
-        //set the damage to the ship
+        /*
+         *pre: none
+         *post: set the damage to the ship
+         *return: none
+        */
         void setDamage(int newDamage);
 
 };

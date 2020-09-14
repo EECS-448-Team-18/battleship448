@@ -1,3 +1,11 @@
+/*
+ * File Name: Ship.cpp
+ * Author: Linh Nguyen
+ * Project 1 EECS 448
+ * Brief: The implementation of the ship that define in Ship.h
+ * Date: Sep 13, 2020
+ * 
+*/
 #include "Ship.h"
 
 using namespace std;
