@@ -17,7 +17,7 @@ class Board
         private:
         	string shotBoard[9][9];
 		string myBoard[9][9];
-		string m_rowNames = "abcdefghi";
+		string m_rowNames = "ABCDEFGHI";
 		string m_columnNames = "123456789";
 		int m_rowIndex;
 		int m_columnIndex;
